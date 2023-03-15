@@ -4,6 +4,7 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'com.google.dagger.hilt.android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -69,6 +70,9 @@ dependencies {
 
     // Paging 3
     implementation "androidx.paging:paging-runtime:3.1.1"
+
+    // Android Extensions
+    implementation "org.jetbrains.kotlin:kotlin-android-extensions-runtime:1.8.0"
 
 }
 kapt {
