@@ -7,6 +7,19 @@
     <fragment
         android:id="@+id/galleryFragment"
         android:name="com.hasandeniz.imagesearch.ui.gallery.GalleryFragment"
-        android:label="fragment_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:label="Gallery"
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_galleryFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.hasandeniz.imagesearch.ui.details.DetailsFragment"
+        android:label="Photo Details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="photo"
+            app:argType="com.hasandeniz.imagesearch.data.UnsplashPhoto" />
+    </fragment>
 </navigation>

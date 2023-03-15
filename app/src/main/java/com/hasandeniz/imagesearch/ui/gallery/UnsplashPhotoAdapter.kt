@@ -11,7 +11,7 @@ import com.hasandeniz.imagesearch.R
 import com.hasandeniz.imagesearch.data.UnsplashPhoto
 import com.hasandeniz.imagesearch.databinding.ItemUnsplashPhotoBinding
 
-class UnsplashPhotoAdapter :
+class UnsplashPhotoAdapter (private val listener: OnItemClickListener):
     PagingDataAdapter<UnsplashPhoto, UnsplashPhotoAdapter.PhotoViewHolder>(UnsplashPhotoDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoViewHolder {
@@ -28,8 +28,20 @@ class UnsplashPhotoAdapter :
         }
     }
 
-    class PhotoViewHolder(private val binding: ItemUnsplashPhotoBinding) :
+    inner class PhotoViewHolder(private val binding: ItemUnsplashPhotoBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val photo = getItem(position)
+                    if (photo != null) {
+                        listener.onItemClick(photo)
+                    }
+                }
+            }
+        }
 
         fun bind(photo: UnsplashPhoto) {
             binding.apply {
@@ -43,6 +55,10 @@ class UnsplashPhotoAdapter :
                 tvCreatorName.text = photo.user.username
             }
         }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(photo: UnsplashPhoto)
     }
 
     class UnsplashPhotoDiffCallback : DiffUtil.ItemCallback<UnsplashPhoto>() {
