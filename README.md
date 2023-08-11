@@ -42,7 +42,7 @@ To install the Image Search App, follow these steps:
 
 ## Technologies
 
-The Image Search App was developed by Hasan Deniz and was built using the following technologies:
+The following technologies and libraries were used in the development of this app:
 
 - Kotlin
 - Android Studio
