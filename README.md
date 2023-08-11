@@ -34,7 +34,7 @@ TBA
 
 ## Installation
 
-To install the Movies App, follow these steps:
+To install the Image Search App, follow these steps:
 
 1. Clone or download the project code from the repository.
 2. Open the project in Android Studio.
@@ -42,7 +42,7 @@ To install the Movies App, follow these steps:
 
 ## Technologies
 
-The Movies App was developed by Hasan Deniz and was built using the following technologies:
+The Image Search App was developed by Hasan Deniz and was built using the following technologies:
 
 - Kotlin
 - Android Studio
